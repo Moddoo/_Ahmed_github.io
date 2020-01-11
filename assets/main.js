@@ -3,7 +3,7 @@ let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()
 function randompassword() {
         let password = "";
         for(i=0; i<12; i++) {
-            password += characters.charAt(Math.floor(Math.random() * characters.length))
+            password += characters[Math.floor(Math.random() * characters.length)]
         }
         console.log(password)
         document.getElementById("text").innerHTML= password;
