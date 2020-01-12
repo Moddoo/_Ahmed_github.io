@@ -3,10 +3,8 @@ let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowerCase = "abcdefghijklmnopqrstuvwxyz";
 let numbers = "0123456789";
 let symbols = "!@#$%^&*()=+-_}{][\|/.,><?`~";
-// let password = ""
-if (document.getElementById("upper").checked === true) {
-     randompassword();
-}
+
+
 function randompassword() {
     var passGenString = "";
     if (document.getElementById("upper").checked){
@@ -20,7 +18,13 @@ function randompassword() {
     }
     if (document.getElementById("symbol").checked){
         passGenString = passGenString + symbols
-    }
+    } 
+    if (!document.getElementById("upper").checked &&
+        !document.getElementById("lower").checked &&
+        !document.getElementById("num").checked &&
+        !document.getElementById("symbol").checked) {
+            return;
+        }
     console.log(passGenString);
     let password = "";
     for(i=0; i<12; i++) {
@@ -30,3 +34,8 @@ function randompassword() {
     document.getElementById("text").innerHTML= password;
 }
     
+function copypwd() {
+    document.getElementById("text").select();
+    document.getElementById("text").setSelectionRange(0, 99999);
+    document.execCommand("copy");
+}
