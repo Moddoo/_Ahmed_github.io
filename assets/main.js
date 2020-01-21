@@ -7,7 +7,7 @@ let x = prompt("please write the length of your password?");
 console.log(typeof x)
 
 
-if ( parseInt(x) <6 || parseInt(x) > 12 || isNaN(x) || !x) {
+if ( parseInt(x) <6 || parseInt(x) > 12 || isNaN(x) || !x || x.indexOf(".") !== -1) {
     alert("put number between 5 and 12");
     location.reload();
 } else {
