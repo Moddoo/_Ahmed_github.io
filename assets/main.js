@@ -9,6 +9,7 @@ console.log(typeof x)
 
 if ( parseInt(x) <6 || parseInt(x) > 12 || isNaN(x) || !x) {
     alert("put number between 5 and 12");
+    location.reload();
 } else {
 function randompassword() {
         let passGenString = "";
